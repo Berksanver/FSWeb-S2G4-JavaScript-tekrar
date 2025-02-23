@@ -50,8 +50,8 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap) {
+  return 2 * pi *yaricap;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -64,8 +64,8 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap) {
+  return pi* yaricap * yaricap;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -98,26 +98,55 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
-
-/* kodlar buraya */
-
+ const sayilarKopya = [...sayilar];
+ sayilarKopya.sort(function(a,b){
+  return a- b;
+ });
+  enbuyuk =sayilarKopya[sayilarKopya.lengh -1];
+  enkucuk =sayilar[0];
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler =[];
+
+sayilar.forEach((sayi) =>{
+  if (sayi %3 ===0){
+    ucetambolunenler.push(sayi);
+  }
+});
 
 // 3c çözümü:
 
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,sayi) => toplam +sayi,0)
 /* kodlar buraya */
 
-// 3d çözümü
+// 3d çözümü:
+
+besyuzdenkucuksayilar = sayilar.filter((sayi)=> sayi<500);
 
 /* kodlar buraya */
 
 // 3e çözümü
 
+siralisayilar = [...besyuzdenkucuksayilar].sort((a,b)=> a-b);
+
 /* kodlar buraya */
 
 // 3f çözümü
+let tekrarEdenSayilarObje ={};
+sayilar.forEach(sayi =>{
+  if (!tekrarEdenSayilarObje[sayi]){
+    tekrarEdenSayilarObje[sayi] =1;
+  } else {
+    tekrarEdenSayilarObje[sayi]++;
+  }
+});
+tekraredensayilar =[];
+for (let key in tekrarEdenSayilarObje){
+  const value = tekrarEdenSayilarObje[key];
+  if (value >1){
+    tekraredensayilar.push(`${key} sayısı ${value} kere tekrar edilmiştir`)
+  }
+}
 
 /* kodlar buraya */
 
